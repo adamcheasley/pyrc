@@ -8,7 +8,10 @@ class Tests(unittest.TestCase):
     """
 
     def test_Test(self):
-        self.assertEqual(1, 1)
+        command = '/j #foo'
+        irc = IRC()
+        output = irc.parsecmd(command)
+        self.assertEqual('JOIN #foo', output)
 
 
 if __name__ == '__main__':
